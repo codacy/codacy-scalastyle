@@ -1,0 +1,244 @@
+{
+  "name": "ScalaStyle",
+  "patterns": [
+    {
+      "patternId": "FileTabChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "WhitespaceEndOfLineChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "FileLineLengthChecker",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "FileLineLengthChecker",
+          "default": 160
+        }
+      ]
+    },
+    {
+      "patternId": "ClassNamesChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ObjectNamesChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "PackageObjectNamesChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "EqualsHashCodeChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "ParameterNumberChecker",
+      "level": "Warning",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "ParameterNumberChecker",
+          "default": 8
+        }
+      ]
+    },
+    {
+      "patternId": "MagicNumberChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "NoWhitespaceBeforeLeftBracketChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "NoWhitespaceAfterLeftBracketChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ReturnChecker",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "NullChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "NoCloneChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "NoFinalizeChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "CovariantEqualsChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "StructuralTypeChecker",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "CyclomaticComplexityChecker",
+      "level": "Warning",
+      "category": "Complexity"
+    },
+    {
+      "patternId": "UppercaseLChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "SimplifyBooleanExpressionChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "IfBraceChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "MethodLengthChecker",
+      "level": "Info",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "MethodLengthChecker",
+          "default": 50
+        }
+      ]
+    },
+    {
+      "patternId": "MethodNamesChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "NumberOfMethodsInTypeChecker",
+      "level": "Warning",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "NumberOfMethodsInTypeChecker",
+          "default": 30
+        }
+      ]
+    },
+    {
+      "patternId": "PublicMethodsHaveTypeChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "WhileChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "VarFieldChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "VarLocalChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "RedundantIfChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "DeprecatedJavaChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "EmptyClassChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ClassTypeParameterChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "UnderscoreImportChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "LowercasePatternMatchChecker",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "MultipleStringLiteralsChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ImportGroupingChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "BlockImportChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ForBraceChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "ProcedureDeclarationChecker",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "NotImplementedErrorUsage",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "NonASCIICharacterChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "FieldNamesChecker",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "XmlLiteralChecker",
+      "level": "Warning",
+      "category": "BestPractice"
+    }
+  ]
+}
