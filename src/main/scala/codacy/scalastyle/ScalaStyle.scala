@@ -7,7 +7,7 @@ import codacy.dockerApi.utils.{CommandRunner, ToolHelper, FileHelper}
 import codacy.dockerApi._
 
 import scala.util.Try
-import scala.xml.Elem
+import scala.xml.{Node, Elem}
 
 object ScalaStyle extends Tool {
 
@@ -19,12 +19,7 @@ object ScalaStyle extends Tool {
           paths.map(_.toString).toList
       }
 
-      val configuration =
-        fullConf.fold(List.empty[String]) {
-          case patternsToLint if patternsToLint.nonEmpty =>
-            List("--config", getConfigFile(patternsToLint).getAbsolutePath.toString)
-          case _ => List.empty[String]
-        }
+      val configuration = List("--config", getConfigFile(fullConf).getAbsolutePath.toString)
 
       val command = List("java", "-jar", "/opt/docker/scalastyle.jar", "--quiet", "true") ++ configuration ++ filesToLint
 
@@ -39,7 +34,7 @@ object ScalaStyle extends Tool {
   def parseToolResult(lines: List[String], path: Path): List[Result] = {
 
     val RegMatch = """([a-z]+) file=(.+) id=(.+) message=(.+) line=([0-9]+).*$""".r
-    val ErrorMatch = """^Error.*""".r
+    val FileErrorMatch = """^error file=(.+) message=(.+)""".r
 
     lines.collect {
       case RegMatch(level, file, id, message, line) =>
@@ -47,12 +42,11 @@ object ScalaStyle extends Tool {
         val filePath = file
         Issue(SourcePath(filePath), ResultMessage(message), PatternId(patternId), ResultLine(line.toInt))
 
-      case line@ErrorMatch() =>
-        //FileError()
-        throw new ScalaStyleParserException("ScalaStyle crashed: " + lines.mkString("\n"))
+      case FileErrorMatch(file, message) =>
+        FileError(SourcePath(file), Some(ErrorMessage(message)))
 
       case line =>
-        FileError(SourcePath("oops"), Some(ErrorMessage("ScalaStyle crashed: " + lines.mkString("\n"))))
+        throw new ScalaStyleParserException("ScalaStyle crashed: " + line)
     }
   }
 
@@ -250,36 +244,45 @@ object ScalaStyle extends Tool {
     </scalastyle>
 
 
-  private def getConfigFile(patterns: List[PatternDef]): File = {
-    val rulesToApply = patterns.map(_.patternId.value)
+  private def getConfigFile(conf: Option[List[PatternDef]]): File = {
+    val customConfig = conf.map {
+      patterns =>
 
-    val customConfig = (scalaStyleConfig \ "check").map {
-      check =>
-        val level = (check \ "@level").text
-        val clazz = (check \ "@class").text
-        val patternName = clazz.split('.').last
-        val enabled = rulesToApply.contains(patternName)
+        val rulesToApply = patterns.map(_.patternId.value)
 
-        val parameters = (check \ "parameters" \ "parameter").map {
-          parameter =>
-            val parameterName = (parameter \ "@name").text
-            //Check if value.toString is good or if it is necessary the printfy or wtv cause of "" in ints/strings
-            val parameterValue = patterns.find(_.patternId.value == patternName)
-              .flatMap(_.parameters.flatMap(_.find(_.name.value == parameterName).map(_.value.toString)))
-              .getOrElse(parameter.text.trim())
+        (scalaStyleConfig \ "check").map {
+          check =>
+            val level = (check \ "@level").text
+            val clazz = (check \ "@class").text
+            val patternName = clazz.split('.').last
+            val enabled = rulesToApply.contains(patternName)
 
-            s"""<parameters><parameter name="$parameterName"><![CDATA[$parameterValue]]></parameter></parameters>"""
+            val parameters = (check \ "parameters" \ "parameter").map {
+              parameter =>
+                val parameterName = (parameter \ "@name").text
+                val paramValue = parameterValue(patterns, patternName, parameter, parameterName)
+
+                s"""<parameters><parameter name="$parameterName"><![CDATA[$paramValue]]></parameter></parameters>"""
+            }
+
+            s"""<check level="$level" class="$clazz" enabled="$enabled"> ${parameters.mkString} </check>""".stripMargin
         }
-
-        s"""<check level="$level" class="$clazz" enabled="$enabled"> ${parameters.mkString} </check>""".stripMargin
     }
 
-    val scalaStyleNewConfig = "<scalastyle>" + customConfig.mkString + "</scalastyle>"
+    val scalaStyleNewConfig = customConfig.fold(scalaStyleConfig.mkString) {
+      case newConf =>
+        "<scalastyle>" + newConf.mkString + "</scalastyle>"
+    }
 
     FileHelper.createTmpFile(scalaStyleNewConfig).toFile
   }
 
 
+  private def parameterValue(patterns: List[PatternDef], patternName: String, parameter: Node, parameterName: String): String = {
+    patterns.find(_.patternId.value == patternName)
+      .flatMap(_.parameters.flatMap(_.find(_.name.value == parameterName).map(_.value.toString)))
+      .getOrElse(parameter.text.trim())
+  }
 }
 
 case class ScalaStyleParserException(message: String) extends Exception(message)

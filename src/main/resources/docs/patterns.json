@@ -17,7 +17,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "FileLineLengthChecker",
+          "name": "maxLineLength",
           "default": 160
         }
       ]
@@ -48,7 +48,7 @@
       "category": "Complexity",
       "parameters": [
         {
-          "name": "ParameterNumberChecker",
+          "name": "maxParameters",
           "default": 8
         }
       ]
@@ -124,7 +124,7 @@
       "category": "Complexity",
       "parameters": [
         {
-          "name": "MethodLengthChecker",
+          "name": "maxLength",
           "default": 50
         }
       ]
@@ -140,7 +140,7 @@
       "category": "Complexity",
       "parameters": [
         {
-          "name": "NumberOfMethodsInTypeChecker",
+          "name": "maxMethods",
           "default": 30
         }
       ]

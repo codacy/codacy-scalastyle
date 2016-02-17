@@ -18,7 +18,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "FileLineLengthChecker",
+        "name": "maxLineLength",
         "description": "Indicate the threshold of characters in a code line"
       }
     ]
@@ -54,7 +54,7 @@
     "timeToFix": 180,
     "parameters": [
       {
-        "name": "ParameterNumberChecker",
+        "name": "maxParameters",
         "description": "Indicate the threshold of parameters that a method can receive"
       }
     ]
@@ -144,7 +144,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "MethodLengthChecker",
+        "name": "maxLength",
         "description": "Indicate the threshold of statements that a method should have"
       }
     ]
@@ -162,7 +162,7 @@
     "timeToFix": 180,
     "parameters": [
       {
-        "name": "NumberOfMethodsInTypeChecker",
+        "name": "maxMethods",
         "description": "Indicate the threshold of methods that a type should have"
       }
     ]
