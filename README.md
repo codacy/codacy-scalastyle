@@ -1,5 +1,5 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/c477c894abe34e608640d6ed95c807f0)](https://www.codacy.com/app/Codacy/codacy-eslint)
-[![Build Status](https://circleci.com/gh/codacy/codacy-eslint.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-eslint)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/6ecd219db0924e07abe4aa687ddadd56)](https://www.codacy.com/app/Codacy/codacy-scalastyle)
+[![Build Status](https://circleci.com/gh/codacy/codacy-scalastyle.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-scalastyle)
 
 # Codacy Scalastyle
 
