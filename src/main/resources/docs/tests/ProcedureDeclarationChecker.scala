@@ -12,3 +12,9 @@ class ProcedureDeclarationChecker {
   }
 
 }
+
+class Foo(s: String) {
+  def this(){
+    this("Bar")
+  }
+}
