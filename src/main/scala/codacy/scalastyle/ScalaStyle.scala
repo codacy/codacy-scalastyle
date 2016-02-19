@@ -21,7 +21,7 @@ object ScalaStyle extends Tool {
 
       val configuration = List("--config", getConfigFile(fullConf).getAbsolutePath.toString)
 
-      val command = List("java", "-jar", "/opt/docker/scalastyle.jar", "--quiet", "true") ++ configuration ++ filesToLint
+      val command = List("java", "-jar", "/opt/docker/scalastyle.jar") ++ configuration ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
@@ -44,9 +44,6 @@ object ScalaStyle extends Tool {
 
       case FileErrorMatch(file, message) =>
         FileError(SourcePath(file), Some(ErrorMessage(message)))
-
-      case line =>
-        throw new ScalaStyleParserException("ScalaStyle crashed: " + line)
     }
   }
 
