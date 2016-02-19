@@ -56,6 +56,7 @@ dockerBaseImage := "rtfpessoa/ubuntu-jdk8"
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
+    Cmd("RUN", "mv /opt/docker/scalastyle-0.8.0-with-id.jar /opt/docker/scalastyle.jar"),
     Cmd("RUN", "adduser --uid 2004 --disabled-password --gecos \"\" docker"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
