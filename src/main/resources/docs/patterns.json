@@ -191,11 +191,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "LowercasePatternMatchChecker",
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
       "patternId": "MultipleStringLiteralsChecker",
       "level": "Info",
       "category": "CodeStyle"

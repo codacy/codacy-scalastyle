@@ -222,12 +222,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "LowercasePatternMatchChecker",
-    "title": "Prohibit lowercase match case",
-    "description": "Prohibits case statement pattern match from being lowercase.",
-    "timeToFix": 10
-  },
-  {
     "patternId": "MultipleStringLiteralsChecker",
     "title": "Prohibit duplicates string literals",
     "description": "Prohibits usage of duplicated string literals.",
