@@ -117,7 +117,13 @@
     "patternId": "CyclomaticComplexityChecker",
     "title": "Enforce cyclomatic complexity",
     "description": "Enforces code to have low cyclomatic complexity.",
-    "timeToFix": 480
+    "timeToFix": 480,
+    "parameters": [
+      {
+        "name": "maximum",
+        "description": "Specifies the complexity threshold"
+      }
+    ]
   },
   {
     "patternId": "UppercaseLChecker",

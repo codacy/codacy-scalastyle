@@ -101,7 +101,13 @@
     {
       "patternId": "CyclomaticComplexityChecker",
       "level": "Warning",
-      "category": "Complexity"
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "maximum",
+          "default": 10
+        }
+      ]
     },
     {
       "patternId": "UppercaseLChecker",
