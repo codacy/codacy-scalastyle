@@ -120,7 +120,7 @@
     "timeToFix": 480,
     "parameters": [
       {
-        "name": "CyclomaticComplexityChecker",
+        "name": "maximum",
         "description": "Specifies the complexity threshold"
       }
     ]
