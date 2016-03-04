@@ -270,12 +270,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "FieldNamesChecker",
-    "title": "Enforce consistent field names",
-    "description": "Enforce that field names match a regular expression",
-    "timeToFix": 5
-  },
-  {
     "patternId": "XmlLiteralChecker",
     "title": "Prohibit XML literals",
     "description": "Prohibit the use of XML literals",

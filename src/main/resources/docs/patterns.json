@@ -232,11 +232,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "FieldNamesChecker",
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
       "patternId": "XmlLiteralChecker",
       "level": "Warning",
       "category": "BestPractice"
