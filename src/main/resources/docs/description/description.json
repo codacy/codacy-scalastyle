@@ -27,19 +27,37 @@
     "patternId": "ClassNamesChecker",
     "title": "Enforce class naming convention",
     "description": "Enforces Scala class naming convention.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "regex",
+        "description": "The regex for name validation"
+      }
+    ]
   },
   {
     "patternId": "ObjectNamesChecker",
     "title": "Enforce object naming convention",
     "description": "Enforces Scala object naming convention.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "regex",
+        "description": "The regex for name validation"
+      }
+    ]
   },
   {
     "patternId": "PackageObjectNamesChecker",
     "title": "Enforce package object naming convention",
     "description": "Enforces Scala package object naming convention.",
-    "timeToFix": 10
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "regex",
+        "description": "The regex for name validation"
+      }
+    ]
   },
   {
     "patternId": "EqualsHashCodeChecker",
@@ -159,7 +177,13 @@
     "patternId": "MethodNamesChecker",
     "title": "Enforce method naming convention",
     "description": "Enforces Scala method naming convention.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "regex",
+        "description": "The regex for name validation"
+      }
+    ]
   },
   {
     "patternId": "NumberOfMethodsInTypeChecker",

@@ -25,17 +25,35 @@
     {
       "patternId": "ClassNamesChecker",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "regex",
+          "default": "^[A-Z][A-Za-z0-9]*$"
+        }
+      ]
     },
     {
       "patternId": "ObjectNamesChecker",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "regex",
+          "default": "^[A-Z][A-Za-z0-9]*$"
+        }
+      ]
     },
     {
       "patternId": "PackageObjectNamesChecker",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "regex",
+          "default": "^[a-z][A-Za-z0-9]*$"
+        }
+      ]
     },
     {
       "patternId": "EqualsHashCodeChecker",
@@ -138,7 +156,13 @@
     {
       "patternId": "MethodNamesChecker",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "regex",
+          "default": "^([a-z][A-Za-z0-9]*|<<|>>>|>|==|!=|<|<=|>|>=|\\||&|\\^|\\+|-|\\*|\\/|%|\\|\\||&&|\\+\\+|--|\\+=|-=)$"
+        }
+      ]
     },
     {
       "patternId": "NumberOfMethodsInTypeChecker",
