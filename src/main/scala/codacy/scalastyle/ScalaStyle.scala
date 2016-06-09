@@ -5,6 +5,7 @@ import java.nio.file.Path
 
 import codacy.dockerApi.utils.{CommandRunner, ToolHelper, FileHelper}
 import codacy.dockerApi._
+import play.api.libs.json.{JsString, JsValue}
 
 import scala.util.Try
 import scala.xml.{Node, Elem}
@@ -274,10 +275,16 @@ object ScalaStyle extends Tool {
     FileHelper.createTmpFile(scalaStyleNewConfig).toFile
   }
 
+  private def jsValueToString(value: JsValue) = {
+    value match {
+      case JsString(v) => v
+      case v => v.toString
+    }
+  }
 
   private def parameterValue(patterns: List[PatternDef], patternName: String, parameter: Node, parameterName: String): String = {
     patterns.find(_.patternId.value == patternName)
-      .flatMap(_.parameters.flatMap(_.find(_.name.value == parameterName).map(_.value.toString)))
+      .flatMap(_.parameters.flatMap(_.find(_.name.value == parameterName).map(jsValue => jsValueToString(jsValue.value))))
       .getOrElse(parameter.text.trim())
   }
 }
