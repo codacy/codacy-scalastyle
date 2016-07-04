@@ -63,7 +63,7 @@
     {
       "patternId": "ParameterNumberChecker",
       "level": "Warning",
-      "category": "Complexity",
+      "category": "CodeStyle",
       "parameters": [
         {
           "name": "maxParameters",
@@ -119,7 +119,7 @@
     {
       "patternId": "CyclomaticComplexityChecker",
       "level": "Warning",
-      "category": "Complexity",
+      "category": "CodeStyle",
       "parameters": [
         {
           "name": "maximum",
@@ -145,7 +145,7 @@
     {
       "patternId": "MethodLengthChecker",
       "level": "Info",
-      "category": "Complexity",
+      "category": "CodeStyle",
       "parameters": [
         {
           "name": "maxLength",
@@ -167,7 +167,7 @@
     {
       "patternId": "NumberOfMethodsInTypeChecker",
       "level": "Warning",
-      "category": "Complexity",
+      "category": "CodeStyle",
       "parameters": [
         {
           "name": "maxMethods",
