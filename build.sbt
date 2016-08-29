@@ -25,6 +25,10 @@ enablePlugins(DockerPlugin)
 
 version in Docker := "1.0"
 
+val installAll =
+  s"""apk --no-cache add bash
+      |&& rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
+
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
   val dest = "/docs"
@@ -51,13 +55,18 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "rtfpessoa/ubuntu-jdk8"
+dockerBaseImage := "develar/java"
 
 dockerCommands := dockerCommands.value.flatMap {
+  case cmd@Cmd("WORKDIR", _) => List(cmd,
+    Cmd("USER","root"),
+    Cmd("RUN", installAll)
+  )
+
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
     Cmd("RUN", "mv /opt/docker/scalastyle-0.8.0-with-id.jar /opt/docker/scalastyle.jar"),
-    Cmd("RUN", "adduser --uid 2004 --disabled-password --gecos \"\" docker"),
+    Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
   case other => List(other)
