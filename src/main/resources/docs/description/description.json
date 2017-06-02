@@ -201,7 +201,13 @@
     "patternId": "PublicMethodsHaveTypeChecker",
     "title": "Enforce return type of public methods",
     "description": "Enforces declaration of explicit return type for public methods.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "ignoreOverride",
+        "description": "Ignore overridden methods"
+      }
+    ]
   },
   {
     "patternId": "WhileChecker",
