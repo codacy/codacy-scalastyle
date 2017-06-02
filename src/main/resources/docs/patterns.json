@@ -178,7 +178,13 @@
     {
       "patternId": "PublicMethodsHaveTypeChecker",
       "level": "Error",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "parameters": [
+        {
+          "name": "ignoreOverride",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "WhileChecker",
