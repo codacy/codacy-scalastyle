@@ -1,0 +1,1 @@
+Scalastyle examines your Scala code and indicates potential problems with it. If you have come across Checkstyle for Java, then you’ll have a good idea what scalastyle is. Except that it’s for Scala obviously. [Learn more](http://www.scalastyle.org/)
