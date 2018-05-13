@@ -1,5 +1,6 @@
 {
   "name": "ScalaStyle",
+  "version": "1.0.0",
   "patterns": [
     {
       "patternId": "FileTabChecker",

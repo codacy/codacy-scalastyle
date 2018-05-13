@@ -56,18 +56,15 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "develar/java"
+dockerBaseImage := "openjdk:8-jre-alpine"
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("WORKDIR", _) => List(cmd,
-    Cmd("USER","root"),
-    Cmd("RUN", installAll)
-  )
-
-  case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "mv /opt/docker/scalastyle-0.8.0-with-id.jar /opt/docker/scalastyle.jar"),
+  case cmd@Cmd("ADD", _) => List(
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
+    cmd,
+    Cmd("RUN", installAll),
+    Cmd("RUN", "mv /opt/docker/docs /docs"),
+    Cmd("RUN", "mv /opt/docker/scalastyle-1.0.0-with-id.jar /opt/docker/scalastyle.jar"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
   case other => List(other)
