@@ -1,10 +1,12 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
-name := """codacy-engine-scalastyle"""
+organization := "codacy"
+
+name := """codacy-scalastyle"""
 
 version := "1.0-SNAPSHOT"
 
-val languageVersion = "2.11.7"
+val languageVersion = "2.12.7"
 
 scalaVersion := languageVersion
 
@@ -14,40 +16,37 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-json" % "2.3.10" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.5" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.1",
-  "com.github.pathikrit" %% "better-files" % "2.16.0"
+  "org.scala-lang.modules" %% "scala-xml" % "1.1.1" withSources(),
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.244" withSources()
 )
 
-enablePlugins(JavaAppPackaging)
+enablePlugins(AshScriptPlugin)
 
 enablePlugins(DockerPlugin)
 
 version in Docker := "1.0"
 
-val installAll =
-  s"""apk --no-cache add bash
-      |&& rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
+mappings in Universal ++= {
+  (resourceDirectory in Compile) map { (resourceDir: File) =>
+    val src = resourceDir / "docs"
+    val dest = "/docs"
 
-mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
-  val src = resourceDir / "docs"
-  val dest = "/docs"
+    for {
+      path <- src.allPaths.get if !path.isDirectory
+    } yield path -> path.toString.replaceFirst(src.toString, dest)
+  }
+}.value
 
-  for {
-    path <- (src ***).get
-    if !path.isDirectory
-  } yield path -> path.toString.replaceFirst(src.toString, dest)
-}
+mappings in Universal ++= {
+  (baseDirectory in Compile) map { (directory: File) =>
+    val src = directory / "jar"
 
-mappings in Universal <++= (baseDirectory in Compile) map { (directory: File) =>
-  val src = directory / "jar"
-
-  for {
-    path <- (src ***).get
-    if !path.isDirectory
-  } yield path -> src.toPath.relativize(path.toPath).toString
-}
+    for {
+      path <- src.allPaths.get
+      if !path.isDirectory
+    } yield path -> src.toPath.relativize(path.toPath).toString
+  }
+}.value
 
 val dockerUser = "docker"
 val dockerGroup = "docker"
@@ -62,7 +61,6 @@ dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("ADD", _) => List(
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     cmd,
-    Cmd("RUN", installAll),
     Cmd("RUN", "mv /opt/docker/docs /docs"),
     Cmd("RUN", "mv /opt/docker/scalastyle-1.0.0-with-id.jar /opt/docker/scalastyle.jar"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
