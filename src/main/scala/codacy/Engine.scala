@@ -1,6 +1,6 @@
 package codacy
 
-import codacy.dockerApi.DockerEngine
+import com.codacy.tools.scala.seed.DockerEngine
 import codacy.scalastyle.ScalaStyle
 
-object Engine extends DockerEngine(ScalaStyle)
+object Engine extends DockerEngine(ScalaStyle)()
