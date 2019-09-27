@@ -1,10 +1,10 @@
 package codacy.scalastyle
 
 import java.io.File
-import java.nio.file.{Path, Paths}
+import java.nio.file.Paths
 
 import com.codacy.plugins.api._
-import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
+import com.codacy.plugins.api.results.{Pattern, Result, Tool}
 import com.codacy.tools.scala.seed.utils._
 import com.codacy.tools.scala.seed.utils.ToolHelper._
 import play.api.libs.json._
@@ -14,23 +14,25 @@ import scala.xml.{Elem, Node, XML}
 
 object ScalaStyle extends Tool {
 
-   def apply(source: Source.Directory,
-             configuration: Option[List[Pattern.Definition]],
-             files: Option[Set[Source.File]],
-             options: Map[Options.Key, Options.Value])(implicit specification: Tool.Specification): Try[List[Result]] = {
+  def apply(
+      source: Source.Directory,
+      configuration: Option[List[Pattern.Definition]],
+      files: Option[Set[Source.File]],
+      options: Map[Options.Key, Options.Value]
+  )(implicit specification: Tool.Specification): Try[List[Result]] = {
     Try {
 
-      lazy val nativeConfigFile: Option[File] = 
+      lazy val nativeConfigFile: Option[File] =
         FileHelper.findConfigurationFile(Paths.get(source.path), nativeConfigFileNames).map(_.toFile)
 
       val fullConfig: Option[List[Pattern.Definition]] = configuration.withDefaultParameters
 
-      val filesToLint: List[String] = files.fold(List(source.path.toString)) {
-        paths =>
-          paths.map(_.toString).toList
+      val filesToLint: List[String] = files.fold(List(source.path.toString)) { paths =>
+        paths.map(_.toString).toList
       }
 
-      val configurationOption = List("--config",
+      val configurationOption = List(
+        "--config",
         //priorities: codacy-patterns then a native config in the project-root then the default config
         getConfigFile(fullConfig).orElse(nativeConfigFile).getOrElse(defaultConfigFile).getAbsolutePath
       )
@@ -71,33 +73,30 @@ object ScalaStyle extends Tool {
   }
 
   private def getConfigFile(conf: Option[List[Pattern.Definition]]): Option[File] = {
-    val customConfig = conf.map {
-      patterns =>
+    val customConfig = conf.map { patterns =>
+      val rulesToApply = patterns.map(_.patternId.value)
 
-        val rulesToApply = patterns.map(_.patternId.value)
+      (scalaStyleConfig \ "check").map { check =>
+        val level = (check \ "@level").text
+        val clazz = (check \ "@class").text
+        val patternName = clazz.split('.').last
+        val enabled = rulesToApply.contains(patternName)
 
-        (scalaStyleConfig \ "check").map {
-          check =>
-            val level = (check \ "@level").text
-            val clazz = (check \ "@class").text
-            val patternName = clazz.split('.').last
-            val enabled = rulesToApply.contains(patternName)
+        val parameters = (check \ "parameters" \ "parameter").map { parameter =>
+          val parameterName = (parameter \ "@name").text
+          val paramValue = parameterValue(patterns, patternName, parameter, parameterName)
 
-            val parameters = (check \ "parameters" \ "parameter").map {
-              parameter =>
-                val parameterName = (parameter \ "@name").text
-                val paramValue = parameterValue(patterns, patternName, parameter, parameterName)
-
-                s"""<parameters><parameter name="$parameterName"><![CDATA[$paramValue]]></parameter></parameters>"""
-            }
-
-            s"""<check level="$level" class="$clazz" enabled="$enabled"> ${parameters.mkString} </check>""".stripMargin
+          s"""<parameters><parameter name="$parameterName"><![CDATA[$paramValue]]></parameter></parameters>"""
         }
+
+        s"""<check level="$level" class="$clazz" enabled="$enabled"> ${parameters.mkString} </check>""".stripMargin
+      }
     }
 
-    customConfig.map { case newConf =>
-      val scalaStyleNewConfig = "<scalastyle>" + newConf.mkString + "</scalastyle>"
-      FileHelper.createTmpFile(scalaStyleNewConfig).toFile
+    customConfig.map {
+      case newConf =>
+        val scalaStyleNewConfig = "<scalastyle>" + newConf.mkString + "</scalastyle>"
+        FileHelper.createTmpFile(scalaStyleNewConfig).toFile
     }
   }
 
@@ -108,9 +107,17 @@ object ScalaStyle extends Tool {
     }
   }
 
-  private def parameterValue(patterns: List[Pattern.Definition], patternName: String, parameter: Node, parameterName: String): String = {
-    patterns.find(_.patternId.value == patternName)
-      .flatMap(_.parameters.flatMap(_.find(_.name.value == parameterName).map(jsValue => jsValueToString(jsValue.value))))
+  private def parameterValue(
+      patterns: List[Pattern.Definition],
+      patternName: String,
+      parameter: Node,
+      parameterName: String
+  ): String = {
+    patterns
+      .find(_.patternId.value == patternName)
+      .flatMap(
+        _.parameters.flatMap(_.find(_.name.value == parameterName).map(jsValue => jsValueToString(jsValue.value)))
+      )
       .getOrElse(parameter.text.trim())
   }
 }

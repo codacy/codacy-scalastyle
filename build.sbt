@@ -2,22 +2,13 @@ import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
 organization := "codacy"
 
-name := """codacy-scalastyle"""
+name := "codacy-scalastyle"
 
-version := "1.0-SNAPSHOT"
-
-val languageVersion = "2.12.7"
-
-scalaVersion := languageVersion
-
-resolvers ++= Seq(
-  "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases"
-)
+scalaVersion := "2.12.10"
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.1.1" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.244" withSources()
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296" withSources ()
 )
 
 enablePlugins(AshScriptPlugin)
@@ -58,12 +49,13 @@ daemonGroup in Docker := dockerGroup
 dockerBaseImage := "openjdk:8-jre-alpine"
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("ADD", _) => List(
-    Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
-    cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "mv /opt/docker/scalastyle-1.0.0-with-id.jar /opt/docker/scalastyle.jar"),
-    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
-  )
+  case cmd @ Cmd("ADD", _) =>
+    List(
+      Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
+      cmd,
+      Cmd("RUN", "mv /opt/docker/docs /docs"),
+      Cmd("RUN", "mv /opt/docker/scalastyle-1.0.0-with-id.jar /opt/docker/scalastyle.jar"),
+      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
+    )
   case other => List(other)
 }
