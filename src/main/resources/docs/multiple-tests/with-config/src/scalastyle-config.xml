@@ -1,0 +1,5 @@
+<scalastyle commentFilter="enabled">
+    <name>Scalastyle test configuration</name>
+    <check level="warning" class="org.scalastyle.file.FileTabChecker" enabled="true"></check>
+    <check level="warning" class="org.scalastyle.scalariform.ImportGroupingChecker" enabled="true"></check>
+</scalastyle>
