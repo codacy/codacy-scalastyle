@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/6ecd219db0924e07abe4aa687ddadd56)](https://www.codacy.com/app/Codacy/codacy-scalastyle)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ecd219db0924e07abe4aa687ddadd56)](https://www.codacy.com/gh/codacy/codacy-scalastyle?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-scalastyle&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://circleci.com/gh/codacy/codacy-scalastyle.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-scalastyle)
 
 # Codacy Scalastyle
