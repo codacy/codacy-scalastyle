@@ -7,8 +7,8 @@ name := "codacy-scalastyle"
 scalaVersion := "2.12.10"
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296" withSources ()
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
+  "com.codacy" %% "codacy-engine-scala-seed" % "4.0.2"
 )
 
 enablePlugins(AshScriptPlugin)
