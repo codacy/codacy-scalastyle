@@ -1,5 +1,5 @@
 {
-  "name": "ScalaStyle",
+  "name": "scalastyle",
   "version": "1.0.0",
   "patterns": [
     {
