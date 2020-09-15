@@ -115,9 +115,7 @@ object ScalaStyle extends Tool {
   ): String = {
     patterns
       .find(_.patternId.value == patternName)
-      .flatMap(
-        _.parameters.flatMap(_.find(_.name.value == parameterName).map(jsValue => jsValueToString(jsValue.value)))
-      )
+      .flatMap(_.parameters.find(_.name.value == parameterName).map(jsValue => jsValueToString(jsValue.value)))
       .getOrElse(parameter.text.trim())
   }
 }
