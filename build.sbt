@@ -8,7 +8,7 @@ scalaVersion := "2.12.10"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
-  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.0"
+  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1"
 )
 
 enablePlugins(AshScriptPlugin)
