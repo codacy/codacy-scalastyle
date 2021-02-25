@@ -3,7 +3,6 @@
 
 # Allow files and directories
 !/target/universal/stage
-!/target/scala-*
 !/docs
 
 # Ignore unnecessary files inside allowed directories
