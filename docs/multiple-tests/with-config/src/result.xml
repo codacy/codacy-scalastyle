@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.0">
+ <file name="/src/./ImportGroupingChecker.scala">
+  <error column="2" line="8" source="org.scalastyle.scalariform.ImportGroupingChecker" severity="warning" message="Imports should be grouped together."/>
+ </file>
+ <file name="/src/./FileTabChecker.scala">
+  <error column="0" line="5" source="org.scalastyle.file.FileTabChecker" severity="warning" message="Line contains a tab."/>
+ </file>
+</checkstyle>
