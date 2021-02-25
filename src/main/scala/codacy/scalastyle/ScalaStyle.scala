@@ -9,8 +9,11 @@ import com.codacy.tools.scala.seed.utils._
 import com.codacy.tools.scala.seed.utils.ToolHelper._
 import play.api.libs.json._
 
+import org.scalastyle._
+
 import scala.util.Try
 import scala.xml.{Elem, Node, XML}
+import com.typesafe.config.ConfigFactory
 
 object ScalaStyle extends Tool {
 
@@ -31,19 +34,16 @@ object ScalaStyle extends Tool {
         paths.map(_.toString).toList
       }
 
-      val configurationOption = List(
-        "--config",
-        //priorities: codacy-patterns then a native config in the project-root then the default config
-        getConfigFile(fullConfig).orElse(nativeConfigFile).getOrElse(defaultConfigFile).getAbsolutePath
-      )
-
-      val command = List("java", "-jar", "/opt/docker/scalastyle.jar") ++ configurationOption ++ filesToLint
-
-      CommandRunner.exec(command) match {
-        case Right(resultFromTool) =>
-          parseToolResult(resultFromTool.stdout, source)
-        case Left(failure) => throw failure
+      val scalastyleConfiguration = {
+        val path = getConfigFile(fullConfig).orElse(nativeConfigFile).getOrElse(defaultConfigFile).getAbsolutePath
+        ScalastyleConfiguration.readFromXml(path)
       }
+
+      val messageHelper = new MessageHelper(ConfigFactory.load())
+
+      val toolResult = new ScalastyleChecker()
+        .checkFiles(scalastyleConfiguration, Directory.getFiles(None, filesToLint.map(new File(_))))
+      parseToolResult(toolResult, messageHelper)
     }
   }
 
@@ -56,21 +56,22 @@ object ScalaStyle extends Tool {
 
   private lazy val scalaStyleConfig: Elem = XML.loadFile(defaultConfigFile)
 
-  private def parseToolResult(lines: List[String], source: Source.Directory): List[Result] = {
+  private def parseToolResult(result: List[Message[FileSpec]], messageHelper: MessageHelper): List[Result] =
+    result.collect {
+      case styleError: StyleError[FileSpec] =>
+        val patternId = styleError.clazz.getSimpleName()
+        val message = styleError.customMessage.getOrElse(messageHelper.message(styleError.key, styleError.args))
+        val line = styleError.lineNumber.getOrElse(0)
 
-    val RegMatch = """([a-z]+) file=(.+) id=(.+) message=(.+) line=([0-9]+).*$""".r
-    val FileErrorMatch = """^error file=(.+) message=(.+)""".r
-
-    lines.collect {
-      case RegMatch(level, file, id, message, line) =>
-        val patternId = id.split('.').last
-        val filePath = file
-        Result.Issue(Source.File(filePath), Result.Message(message), Pattern.Id(patternId), Source.Line(line.toInt))
-
-      case FileErrorMatch(file, message) =>
-        Result.FileError(Source.File(file), Option(ErrorMessage(message)))
+        Result.Issue(
+          Source.File(styleError.fileSpec.name),
+          Result.Message(message),
+          Pattern.Id(patternId),
+          Source.Line(line.toInt)
+        )
+      case styleException: StyleException[FileSpec] =>
+        Result.FileError(Source.File(styleException.fileSpec.name), Some(ErrorMessage(styleException.message)))
     }
-  }
 
   private def getConfigFile(conf: Option[List[Pattern.Definition]]): Option[File] = {
     val customConfig = conf.map { patterns =>
