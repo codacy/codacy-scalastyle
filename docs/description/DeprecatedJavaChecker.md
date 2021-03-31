@@ -1,2 +1,3 @@
-Scala `@deprecated` should be used instead.
-      
+# Deprecated Java
+
+You should be using the Scala `@deprecated` instead.

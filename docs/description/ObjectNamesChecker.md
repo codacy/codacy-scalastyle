@@ -1,6 +1,3 @@
-Objects should be named in the CamelCase style with the very first letter of the name capitalized:
+# Object Names
 
-    object MyFairLady
-
-[Source](http://docs.scala-lang.org/style/naming-conventions.html)
-      
+The Scala style guide recommends that object names conform to certain standards.

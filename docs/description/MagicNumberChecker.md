@@ -1,6 +1,3 @@
-A simple assignment to a val is not considered to be a magic number, for example:
+# Magic Number
 
-    val foo = 4
-
-is not a magic number, otherwise a numeric literal is considered to be a magic number.
-      
+Replacing a magic number with a named constant can make code easier to read and understand, and can avoid some subtle bugs.

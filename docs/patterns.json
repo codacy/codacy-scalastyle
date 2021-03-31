@@ -1,312 +1,673 @@
 {
-  "name": "scalastyle",
-  "version": "1.5.0",
-  "patterns": [
-    {
-      "patternId": "FileTabChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "WhitespaceEndOfLineChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "FileLineLengthChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maxLineLength",
-          "default": 160
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "ClassNamesChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "regex",
-          "default": "^[A-Z][A-Za-z0-9]*$"
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "ObjectNamesChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "regex",
-          "default": "^[A-Z][A-Za-z0-9]*$"
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "PackageObjectNamesChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "regex",
-          "default": "^[a-z][A-Za-z0-9]*$"
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "EqualsHashCodeChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "ParameterNumberChecker",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maxParameters",
-          "default": 8
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MagicNumberChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "NoWhitespaceBeforeLeftBracketChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "NoWhitespaceAfterLeftBracketChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "ReturnChecker",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "NullChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "NoCloneChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "NoFinalizeChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "CovariantEqualsChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "StructuralTypeChecker",
-      "level": "Warning",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "CyclomaticComplexityChecker",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maximum",
-          "default": 10
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "UppercaseLChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "SimplifyBooleanExpressionChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "IfBraceChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "MethodLengthChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maxLength",
-          "default": 50
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MethodNamesChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "regex",
-          "default": "^([a-z][A-Za-z0-9]*|<<|>>>|>|==|!=|<|<=|>|>=|\\||&|\\^|\\+|-|\\*|\\/|%|\\|\\||&&|\\+\\+|--|\\+=|-=)$"
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "NumberOfMethodsInTypeChecker",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maxMethods",
-          "default": 30
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "PublicMethodsHaveTypeChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "parameters": [
-        {
-          "name": "ignoreOverride",
-          "default": false
-        }
-      ],
-      "enabled": false
-    },
-    {
-      "patternId": "WhileChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "VarFieldChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "VarLocalChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "RedundantIfChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "DeprecatedJavaChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "EmptyClassChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "ClassTypeParameterChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "UnderscoreImportChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "MultipleStringLiteralsChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "ImportGroupingChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "BlockImportChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "ForBraceChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "ProcedureDeclarationChecker",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": false
-    },
-    {
-      "patternId": "NotImplementedErrorUsage",
-      "level": "Error",
-      "category": "ErrorProne",
-      "enabled": true
-    },
-    {
-      "patternId": "NonASCIICharacterChecker",
-      "level": "Info",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "XmlLiteralChecker",
-      "level": "Warning",
-      "category": "BestPractice",
-      "enabled": false
-    }
-  ]
+  "name" : "scalastyle",
+  "version" : "1.5.0",
+  "patterns" : [ {
+    "patternId" : "BlockImportChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "CaseBraceChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ClassNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[A-Z][A-Za-z]*$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ClassTypeParameterChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[A-Z_]$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "CovariantEqualsChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "CurliesImportChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "CyclomaticComplexityChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maximum",
+      "default" : 10
+    }, {
+      "name" : "countCases",
+      "default" : true
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "DeprecatedJavaChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "DisallowSpaceAfterTokenChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "DisallowSpaceBeforeTokenChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "EmptyClassChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "EmptyInterpolatedStringChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "EnsureSingleSpaceAfterTokenChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "EnsureSingleSpaceBeforeTokenChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "EqualsHashCodeChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "FieldNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[a-z][A-Za-z0-9]*$"
+    }, {
+      "name" : "objectFieldRegex",
+      "default" : "^[A-Z][A-Za-z0-9]*$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "FileLengthChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxFileLength",
+      "default" : 1500
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "FileLineLengthChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxLineLength",
+      "default" : 160
+    }, {
+      "name" : "tabSize",
+      "default" : 4
+    }, {
+      "name" : "ignoreImports",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "FileTabChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ForBraceChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "singleLineAllowed",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ForLoopChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "HeaderMatchesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "header",
+      "default" : ""
+    }, {
+      "name" : "regex",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "IfBraceChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "singleLineAllowed",
+      "default" : true
+    }, {
+      "name" : "doubleLineAllowed",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "IllegalImportsChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "illegalImports",
+      "default" : "sun._,java.awt._"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ImportGroupingChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ImportOrderChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "IndentationChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tabSize",
+      "default" : 2
+    }, {
+      "name" : "methodParamIndentSize",
+      "default" : 2
+    }, {
+      "name" : "classParamIndentSize",
+      "default" : 4
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "LowercasePatternMatchChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MagicNumberChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignore",
+      "default" : "-1,0,1,2"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MethodArgumentNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[a-z][A-Za-z0-9]*$"
+    }, {
+      "name" : "ignoreRegex",
+      "default" : "^$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MethodLengthChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxLength",
+      "default" : 50
+    }, {
+      "name" : "ignoreComments",
+      "default" : false
+    }, {
+      "name" : "ignoreEmpty",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MethodNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[a-z][A-Za-z0-9]*(_=)?$"
+    }, {
+      "name" : "ignoreRegex",
+      "default" : "^$"
+    }, {
+      "name" : "ignoreOverride",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MultipleStringLiteralsChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowed",
+      "default" : 1
+    }, {
+      "name" : "ignoreRegex",
+      "default" : "^\"\"$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NamedArgumentChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkString",
+      "default" : false
+    }, {
+      "name" : "ignoreMethod",
+      "default" : "^set.+$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NewLineAtEofChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoCloneChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoFinalizeChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoNewLineAtEofChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoWhitespaceAfterLeftBracketChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoWhitespaceBeforeLeftBracketChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NoWhitespaceBeforeRightBracketChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NonASCIICharacterChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowStringLiterals",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NotImplementedErrorUsage",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NullChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ {
+      "name" : "allowNullChecks",
+      "default" : true
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NumberOfMethodsInTypeChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxMethods",
+      "default" : 30
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "NumberOfTypesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxTypes",
+      "default" : 20
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ObjectNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[A-Z][A-Za-z]*$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "OverrideJavaChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "PackageNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[a-z]+$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "PackageObjectNamesChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^[a-z][A-Za-z]*$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ParameterNumberChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxParameters",
+      "default" : 8
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "PatternMatchAlignChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ProcedureDeclarationChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "PublicMethodsHaveTypeChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ {
+      "name" : "ignoreOverride",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "RedundantIfChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "RegexChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    }, {
+      "name" : "line",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ReturnChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ScalaDocChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreRegex",
+      "default" : "^$"
+    }, {
+      "name" : "ignoreTokenTypes",
+      "default" : "^$"
+    }, {
+      "name" : "ignoreOverride",
+      "default" : false
+    }, {
+      "name" : "indentStyle",
+      "default" : "anydoc"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SimplifyBooleanExpressionChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpaceAfterCommentStartChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpacesAfterPlusChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpacesBeforePlusChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "StructuralTypeChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ThrowChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "TodoCommentChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "words",
+      "default" : "TODO|FIXME"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "TokenChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : "^$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "UnderscoreImportChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "UppercaseLChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "VarFieldChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "VarLocalChecker",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "WhileBraceChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "WhileChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "WhitespaceEndOfLineChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreWhitespaceLines",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "XmlLiteralChecker",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  } ]
 }

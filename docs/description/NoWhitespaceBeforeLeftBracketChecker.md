@@ -1,14 +1,3 @@
-There should be no whitespace before the type parameter:
+# No Whitespace Before Left Bracket
 
-    def result(i: Int): Option [Int] = {
-      Some(i)
-    }
-
-This should be:
-
-    def result(i: Int): Option[Int] = {
-      Some(i)
-    }
-
-[Source](http://docs.scala-lang.org/style/naming-conventions.html#type_parameters_generics)
-      
+If there is whitespace before a left bracket, this can be confusing to the reader.

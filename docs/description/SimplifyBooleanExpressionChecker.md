@@ -1,8 +1,3 @@
-For example:
+# Simplify Boolean Expression
 
-    def expr(i: Int) = i > 0 || true
-
-Can be rewritten as:
-
-    def expr(i: Int) = true
-      
+A boolean expression which can be simplified can make code easier to read.

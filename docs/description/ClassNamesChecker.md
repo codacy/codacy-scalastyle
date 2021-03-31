@@ -1,8 +1,3 @@
-Classes should be named in the CamelCase style with the very first letter of the name capitalized:
+# Class Names
 
-    class MyFairLady
-
-This mimics the Java naming convention for classes.
-
-[Source](http://docs.scala-lang.org/style/naming-conventions.html)
-      
+The Scala style guide recommends that class names conform to certain standards.

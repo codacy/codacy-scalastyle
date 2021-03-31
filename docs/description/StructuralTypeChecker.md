@@ -1,12 +1,3 @@
-Scala has support for structural types — type requirements are expressed by interface structure instead of a concrete type.
+# Structural Type
 
-    def foo(x: { def get: Int }) = 123 + x.get
-    foo: (x: AnyRef{def get: Int})Int
-
-    foo(new { def get = 10 })
-    res0: Int = 133
-
-This can be quite nice in many situations, but the implementation uses reflection, so it might take a toll on performance.
-
-[Source](https://twitter.github.io/scala_school/advanced-types.html#structural)
-      
+Structural types in Scala can use reflection - this can have unexpected performance consequences. Warning: This check can also wrongly pick up type lamdbas and other such constructs. This checker should be used with care. You always have the alternative of the scalac checking for structural types.

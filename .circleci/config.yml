@@ -13,6 +13,9 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
+            # Install Ammonite
+            sudo sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/com-lihaoyi/Ammonite/releases/download/2.3.8/2.13-2.3.8) > /usr/local/bin/amm && chmod +x /usr/local/bin/amm'
+            amm doc-generator.sc
             sbt "scalafmt::test;
                  test:scalafmt::test;
                  sbt:scalafmt::test;
