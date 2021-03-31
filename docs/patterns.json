@@ -7,14 +7,14 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CaseBraceChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClassNamesChecker",
     "level" : "Warning",
@@ -24,7 +24,7 @@
       "default" : "^[A-Z][A-Za-z]*$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClassTypeParameterChecker",
     "level" : "Warning",
@@ -34,21 +34,21 @@
       "default" : "^[A-Z_]$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CovariantEqualsChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CurliesImportChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CyclomaticComplexityChecker",
     "level" : "Warning",
@@ -61,63 +61,63 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "DeprecatedJavaChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "DisallowSpaceAfterTokenChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "DisallowSpaceBeforeTokenChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "EmptyClassChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "EmptyInterpolatedStringChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "EnsureSingleSpaceAfterTokenChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "EnsureSingleSpaceBeforeTokenChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "EqualsHashCodeChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FieldNamesChecker",
     "level" : "Warning",
@@ -130,7 +130,7 @@
       "default" : "^[A-Z][A-Za-z0-9]*$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FileLengthChecker",
     "level" : "Warning",
@@ -140,7 +140,7 @@
       "default" : 1500
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FileLineLengthChecker",
     "level" : "Warning",
@@ -156,14 +156,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FileTabChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ForBraceChecker",
     "level" : "Warning",
@@ -173,14 +173,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ForLoopChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "HeaderMatchesChecker",
     "level" : "Warning",
@@ -193,7 +193,7 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "IfBraceChecker",
     "level" : "Warning",
@@ -206,7 +206,7 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "IllegalImportsChecker",
     "level" : "Warning",
@@ -216,21 +216,21 @@
       "default" : "sun._,java.awt._"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ImportGroupingChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ImportOrderChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "IndentationChecker",
     "level" : "Warning",
@@ -246,14 +246,14 @@
       "default" : 4
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "LowercasePatternMatchChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MagicNumberChecker",
     "level" : "Warning",
@@ -263,7 +263,7 @@
       "default" : "-1,0,1,2"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MethodArgumentNamesChecker",
     "level" : "Warning",
@@ -276,7 +276,7 @@
       "default" : "^$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MethodLengthChecker",
     "level" : "Warning",
@@ -292,7 +292,7 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MethodNamesChecker",
     "level" : "Warning",
@@ -308,7 +308,7 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MultipleStringLiteralsChecker",
     "level" : "Warning",
@@ -321,7 +321,7 @@
       "default" : "^\"\"$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NamedArgumentChecker",
     "level" : "Warning",
@@ -334,56 +334,56 @@
       "default" : "^set.+$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NewLineAtEofChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoCloneChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoFinalizeChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoNewLineAtEofChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoWhitespaceAfterLeftBracketChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoWhitespaceBeforeLeftBracketChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoWhitespaceBeforeRightBracketChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NonASCIICharacterChecker",
     "level" : "Warning",
@@ -393,14 +393,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NotImplementedErrorUsage",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NullChecker",
     "level" : "Warning",
@@ -410,7 +410,7 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NumberOfMethodsInTypeChecker",
     "level" : "Warning",
@@ -420,7 +420,7 @@
       "default" : 30
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NumberOfTypesChecker",
     "level" : "Warning",
@@ -430,7 +430,7 @@
       "default" : 20
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ObjectNamesChecker",
     "level" : "Warning",
@@ -440,14 +440,14 @@
       "default" : "^[A-Z][A-Za-z]*$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "OverrideJavaChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "PackageNamesChecker",
     "level" : "Warning",
@@ -457,7 +457,7 @@
       "default" : "^[a-z]+$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "PackageObjectNamesChecker",
     "level" : "Warning",
@@ -467,7 +467,7 @@
       "default" : "^[a-z][A-Za-z]*$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ParameterNumberChecker",
     "level" : "Warning",
@@ -477,21 +477,21 @@
       "default" : 8
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "PatternMatchAlignChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ProcedureDeclarationChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "PublicMethodsHaveTypeChecker",
     "level" : "Warning",
@@ -501,14 +501,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "RedundantIfChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "RegexChecker",
     "level" : "Warning",
@@ -521,14 +521,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ReturnChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ScalaDocChecker",
     "level" : "Warning",
@@ -547,49 +547,49 @@
       "default" : "anydoc"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SimplifyBooleanExpressionChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterCommentStartChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpacesAfterPlusChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpacesBeforePlusChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "StructuralTypeChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ThrowChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "TodoCommentChecker",
     "level" : "Warning",
@@ -599,7 +599,7 @@
       "default" : "TODO|FIXME"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "TokenChecker",
     "level" : "Warning",
@@ -609,49 +609,49 @@
       "default" : "^$"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnderscoreImportChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UppercaseLChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "VarFieldChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "VarLocalChecker",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "WhileBraceChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "WhileChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "WhitespaceEndOfLineChecker",
     "level" : "Warning",
@@ -661,13 +661,13 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "XmlLiteralChecker",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   } ]
 }

@@ -80,7 +80,7 @@ val patternSpecifications = checkers.map { checker =>
     checker.level,
     checker.category,
     subcategory = None,
-    enabled = false,
+    enabled = true,
     parameters = parameters
   )
 }
