@@ -4,7 +4,7 @@ import java.lang.Exception
 
 class ImportGroupingChecker {
 
-  //#Info: ImportGroupingChecker
+  //#Warning: ImportGroupingChecker
   import java.lang.Object
 
 }

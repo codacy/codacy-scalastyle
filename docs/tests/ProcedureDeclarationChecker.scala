@@ -2,7 +2,7 @@
 
 class ProcedureDeclarationChecker {
 
-  //#Err: ProcedureDeclarationChecker
+  //#Warning:  ProcedureDeclarationChecker
   def foo() {
     42
   }

@@ -2,7 +2,7 @@
 
 class VarFieldChecker {
 
-  //#Err: VarFieldChecker
+  //#Warning:  VarFieldChecker
   var a = 10
 
 }

@@ -1,6 +1,6 @@
 //#Patterns: ClassNamesChecker: {"regex": "^[A-Z][A-Za-z]*$"}
 
-//#Info: ClassNamesChecker
+//#Warning: ClassNamesChecker
 class lowerClassNamesChecker {
 
 }
@@ -9,7 +9,7 @@ class ScalaStyleClassNamesChecker {
 
 }
 
-//#Info: ClassNamesChecker
+//#Warning: ClassNamesChecker
 class ScalaStyleClassNamesChecker2 {
 
 }

@@ -1,11 +1,11 @@
 //#Patterns: ClassTypeParameterChecker
 
-//#Info: ClassTypeParameterChecker
+//#Warning: ClassTypeParameterChecker
 class ClassTypeParameterChecker[t] {
 
 }
 
-//#Info: ClassTypeParameterChecker
+//#Warning: ClassTypeParameterChecker
 class ClassTypeParameterChecker2[Type] {
 
 }

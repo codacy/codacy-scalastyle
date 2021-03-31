@@ -3,11 +3,11 @@
 class IfBraceChecker {
 
   def expr(i: Int) = {
-    //#Info: IfBraceChecker
+    //#Warning: IfBraceChecker
     if (i < 0)
       println(i)
 
-    //#Info: IfBraceChecker
+    //#Warning: IfBraceChecker
     if (i > 0) {
       i + 1
     }

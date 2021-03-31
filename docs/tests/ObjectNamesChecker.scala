@@ -5,10 +5,10 @@ object Foobar {
   val foo = 1
 }
 
-//#Info: ObjectNamesChecker
+//#Warning: ObjectNamesChecker
 object foobaz {
 
-  //#Info: ObjectNamesChecker
+  //#Warning: ObjectNamesChecker
   object barbar {
   }
 
@@ -16,7 +16,7 @@ object foobaz {
 
 package object foobarz {
 
-  //#Info: ObjectNamesChecker
+  //#Warning: ObjectNamesChecker
   object barbar {
   }
 

@@ -4,9 +4,10 @@ class MethodNamesChecker {
 
   def addOne(i: Int) = i + 1
 
-  //#Info: MethodNamesChecker
+  //#Warning: MethodNamesChecker
   def AddOne(i: Int) = i + 1
-
+  
+  //#Warning: MethodNamesChecker
   def * = "stars are beautiful"
 
 }

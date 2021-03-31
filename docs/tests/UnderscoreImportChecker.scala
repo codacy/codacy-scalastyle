@@ -1,4 +1,4 @@
 //#Patterns: UnderscoreImportChecker
 
-//#Info: UnderscoreImportChecker
+//#Warning: UnderscoreImportChecker
 import java.lang._

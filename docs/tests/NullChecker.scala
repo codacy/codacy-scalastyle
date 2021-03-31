@@ -2,7 +2,7 @@
 
 class NullChecker {
 
-  //#Err: NullChecker
+  //#Warning:  NullChecker
   val a = null
 
 }

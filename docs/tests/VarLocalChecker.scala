@@ -3,7 +3,7 @@
 class VarLocalChecker {
 
   def method() = {
-    //#Err: VarLocalChecker
+    //#Warning:  VarLocalChecker
     var a = 10
   }
 

@@ -3,12 +3,12 @@
 class RedundantIfChecker {
 
   def method(i: Int) = {
-    //#Info: RedundantIfChecker
+    //#Warning: RedundantIfChecker
     if (i > 0)
       false
     else
       true
-    //#Info: RedundantIfChecker
+    //#Warning: RedundantIfChecker
     if (i > 0) {
       false
     } else {

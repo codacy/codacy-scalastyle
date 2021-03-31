@@ -2,7 +2,7 @@
 
 class DeprecatedJavaChecker {
 
-  //#Info: DeprecatedJavaChecker
+  //#Warning: DeprecatedJavaChecker
   @Deprecated
   def method(i: Int) = {
     i == 10
