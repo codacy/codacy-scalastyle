@@ -8,12 +8,12 @@ object DocGenerator extends App {
   val scalastyleDocumentation = XML.loadString(os.read(os.resource / "scalastyle_documentation.xml"))
 
   case class Checker(id: String, defaultLevel: String, cls: String, parameters: Seq[Checker.Parameter]) {
-    def patternId = cls.split('.').last
+    def patternId: String = cls.split('.').last
 
     // Split camel case patternId into separate words
-    def title = patternId.stripSuffix("Checker").replaceAll("([a-z](?=[A-Z]))", "$1 ")
+    def title: String = patternId.stripSuffix("Checker").replaceAll("([a-z](?=[A-Z]))", "$1 ")
 
-    def category = patternId match {
+    def category: Pattern.Category = patternId match {
       case "VarFieldChecker" | "VarLocalChecker" | "ProcedureDeclarationChecker" | "NotImplementedErrorUsage" |
           "EqualsHashCodeChecker" | "NullChecker" | "NoCloneChecker" | "NoFinalizeChecker" | "CovariantEqualsChecker" |
           "StructuralTypeChecker" | "PublicMethodsHaveTypeChecker" =>
@@ -21,7 +21,7 @@ object DocGenerator extends App {
       case _ => Pattern.Category.CodeStyle
     }
 
-    def level = defaultLevel match {
+    def level: Result.Level = defaultLevel match {
       case "warning" => Result.Level.Warn
       case "error" => Result.Level.Err
       case _ => Result.Level.Info
