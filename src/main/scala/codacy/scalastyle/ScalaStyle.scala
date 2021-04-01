@@ -35,8 +35,11 @@ object ScalaStyle extends Tool {
       }
 
       val scalastyleConfiguration = {
-        val path = getConfigFile(fullConfig).orElse(nativeConfigFile).getOrElse(defaultConfigFile).getAbsolutePath
-        ScalastyleConfiguration.readFromXml(path)
+        val pathOpt = getConfigFile(fullConfig).orElse(nativeConfigFile).map(_.getAbsolutePath)
+        pathOpt match {
+          case Some(path) => ScalastyleConfiguration.readFromXml(path)
+          case None => ScalastyleConfiguration.getDefaultConfiguration()
+        }
       }
 
       val messageHelper = new MessageHelper(ConfigFactory.load())
@@ -50,11 +53,9 @@ object ScalaStyle extends Tool {
   private lazy val configFileName = "scalastyle_config.xml"
   private lazy val nativeConfigFileNames = Set(configFileName, "scalastyle-config.xml")
 
-  private lazy val defaultConfigFile: File = {
-    (better.files.File.root / "docs" / configFileName).toJava
-  }
+  private lazy val defaultConfigInputStream: java.io.InputStream = better.files.Resource.getAsStream(ScalastyleConfiguration.DefaultConfiguration)
 
-  private lazy val scalaStyleConfig: Elem = XML.loadFile(defaultConfigFile)
+  private lazy val scalaStyleConfig: Elem = XML.load(defaultConfigInputStream)
 
   private def parseToolResult(result: List[Message[FileSpec]], messageHelper: MessageHelper): List[Result] =
     result.collect {
