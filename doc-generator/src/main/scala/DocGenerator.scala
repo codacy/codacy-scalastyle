@@ -37,12 +37,12 @@ object DocGenerator extends App {
   val checkers = scalastyleDefinition
     .\("checker")
     .map(
-      n =>
+      node =>
         Checker(
-          id = n \@ "id",
-          defaultLevel = n \@ "defaultLevel",
-          cls = n \@ "class",
-          parameters = n.\("parameters").\("parameter").map { p =>
+          id = node \@ "id",
+          defaultLevel = node \@ "defaultLevel",
+          cls = node \@ "class",
+          parameters = node.\("parameters").\("parameter").map { p =>
             Checker.Parameter(name = p \@ "name", default = p \@ "default")
           }
       )
