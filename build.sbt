@@ -15,13 +15,10 @@ val commonDeps = Seq(
 libraryDependencies ++= commonDeps
 
 val `doc-generator` = project
-  .settings(
-    libraryDependencies ++= commonDeps,
-    Compile / sourceGenerators += Def.task {
-      val file = (Compile / sourceManaged).value / "Versions.scala"
-      IO.write(file, s"""object Versions { val scalastyle = "$scalastyleVersion" }""")
-      Seq(file)
-    }.taskValue
-  )
+  .settings(libraryDependencies ++= commonDeps, Compile / sourceGenerators += Def.task {
+    val file = (Compile / sourceManaged).value / "Versions.scala"
+    IO.write(file, s"""object Versions { val scalastyle = "$scalastyleVersion" }""")
+    Seq(file)
+  }.taskValue)
 
 enablePlugins(JavaAppPackaging)
