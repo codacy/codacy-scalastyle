@@ -1,11 +1,13 @@
+import better.files._
+import better.files.Dsl._
 import com.codacy.plugins.api._
 import com.codacy.plugins.api.results._
 import play.api.libs.json.Json
 import scala.xml._
 
 object DocGenerator extends App {
-  val scalastyleDefinition = XML.loadString(os.read(os.resource / "scalastyle_definition.xml"))
-  val scalastyleDocumentation = XML.loadString(os.read(os.resource / "scalastyle_documentation.xml"))
+  val scalastyleDefinition = XML.load(Resource.asStream("scalastyle_definition.xml").get)
+  val scalastyleDocumentation = XML.load(Resource.asStream("scalastyle_documentation.xml").get)
 
   case class Checker(id: String, defaultLevel: String, cls: String, parameters: Seq[Checker.Parameter]) {
     def patternId: String = cls.split('.').last
@@ -50,7 +52,7 @@ object DocGenerator extends App {
     scalastyleDocumentation.\("check").map(c => (c.\@("id"), c.\("justification").text.trim)).toMap
   }
 
-  val docsDirectory = os.pwd / "docs"
+  val docsDirectory = pwd / "docs"
   val descriptionDirectory = docsDirectory / "description"
 
   val patternDescriptions = checkers.map { checker =>
@@ -82,14 +84,14 @@ object DocGenerator extends App {
   val specification =
     Tool.Specification(Tool.Name("scalastyle"), Some(Tool.Version(Versions.scalastyle)), patternSpecifications.toSet)
 
-  os.write.over(os.pwd / "docs" / "patterns.json", Json.prettyPrint(Json.toJson(specification)) + "\n")
-  os.remove.all(descriptionDirectory)
+  (pwd / "docs" / "patterns.json").write(Json.prettyPrint(Json.toJson(specification)) + "\n")
+  descriptionDirectory.createDirectoryIfNotExists(createParents = true)
   checkers.foreach { checker =>
     val content = s"""# ${checker.title}
                      |
                      |${justifications(checker.id)}
                      |""".stripMargin
-    os.write.over(descriptionDirectory / s"${checker.patternId}.md", content, createFolders = true)
+    (descriptionDirectory / s"${checker.patternId}.md").writeText(content)
   }
-  os.write.over(descriptionDirectory / "description.json", Json.prettyPrint(Json.toJson(patternDescriptions)) + "\n")
+  (descriptionDirectory / "description.json").overwrite(Json.prettyPrint(Json.toJson(patternDescriptions)) + "\n")
 }

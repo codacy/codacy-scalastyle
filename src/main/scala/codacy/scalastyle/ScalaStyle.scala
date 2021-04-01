@@ -53,7 +53,8 @@ object ScalaStyle extends Tool {
   private lazy val configFileName = "scalastyle_config.xml"
   private lazy val nativeConfigFileNames = Set(configFileName, "scalastyle-config.xml")
 
-  private lazy val defaultConfigInputStream: java.io.InputStream = better.files.Resource.getAsStream(ScalastyleConfiguration.DefaultConfiguration)
+  private lazy val defaultConfigInputStream: java.io.InputStream =
+    better.files.Resource.getAsStream(ScalastyleConfiguration.DefaultConfiguration)
 
   private lazy val scalaStyleConfig: Elem = XML.load(defaultConfigInputStream)
 
