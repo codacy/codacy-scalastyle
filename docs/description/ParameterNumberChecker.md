@@ -1,2 +1,3 @@
-Methods with too many parameters are a sign of tight coupling.
-      
+# Parameter Number
+
+A method which has more than a certain number of parameters can be hard to understand.

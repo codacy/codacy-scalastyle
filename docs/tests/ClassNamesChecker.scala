@@ -1,6 +1,6 @@
 //#Patterns: ClassNamesChecker
 
-//#Info: ClassNamesChecker
+//#Warning: ClassNamesChecker
 class lowerClassNamesChecker {
 
 }
@@ -8,7 +8,7 @@ class lowerClassNamesChecker {
 class ScalaStyleClassNamesChecker {
 
 }
-
+//#Warning: ClassNamesChecker
 class ScalaStyleClassNamesChecker2 {
 
 }

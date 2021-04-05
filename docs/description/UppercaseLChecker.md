@@ -1,4 +1,3 @@
-A lowercase L (l) can look similar to a number 1 with some fonts.
+# Uppercase L
 
-For example, `42l` should be `42L`.
-      
+A lowercase L (l) can look similar to a number 1 with some fonts.

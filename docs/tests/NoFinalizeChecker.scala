@@ -1,6 +1,6 @@
 //#Patterns: NoFinalizeChecker
 
-//#Err: NoFinalizeChecker
+//#Warning:  NoFinalizeChecker
 class NoFinalizeChecker {
 
   override def finalize(): Unit = {

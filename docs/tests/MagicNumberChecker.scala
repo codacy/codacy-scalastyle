@@ -3,7 +3,7 @@
 class MagicNumberChecker {
 
   def theAnswerToLifeTheUniverseAndEverything: Int =
-    //#Info: MagicNumberChecker
+    //#Warning: MagicNumberChecker
     42
 
 }

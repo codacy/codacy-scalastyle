@@ -2,7 +2,7 @@
 
 class NotImplementedErrorUsage {
 
-  //#Err: NotImplementedErrorUsage
+  //#Warning:  NotImplementedErrorUsage
   def method(i: Int) = ???
 
 }

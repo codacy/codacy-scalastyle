@@ -1,6 +1,6 @@
 //#Patterns: PackageObjectNamesChecker
 
-//#Info: PackageObjectNamesChecker
+//#Warning: PackageObjectNamesChecker
 package object PackageObjectNamesChecker {
 
 }

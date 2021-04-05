@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <checkstyle version="1.5">
     <file name="ImportGroupingChecker.scala">
-        <error source="ImportGroupingChecker" line="8" message="Imports should be grouped together." severity="info" />
+        <error source="ImportGroupingChecker" line="8" message="Imports should be grouped together." severity="warning" />
     </file>
 </checkstyle>

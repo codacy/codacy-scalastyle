@@ -1,308 +1,447 @@
-[
-  {
-    "patternId": "FileTabChecker",
-    "title": "Prohibit tabs in a file",
-    "description": "Prohibits from using tabs for indentation.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "WhitespaceEndOfLineChecker",
-    "title": "Prohibit trailing whitespace",
-    "description": "Prohibits whitespace on any line directly before the line end character(s).",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "FileLineLengthChecker",
-    "title": "Enforce line max length",
-    "description": "Enforces the maximum characters length of each line.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "maxLineLength",
-        "description": "Indicate the threshold of characters in a code line"
-      }
-    ]
-  },
-  {
-    "patternId": "ClassNamesChecker",
-    "title": "Enforce class naming convention",
-    "description": "Enforces Scala class naming convention.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "regex",
-        "description": "The regex for name validation"
-      }
-    ]
-  },
-  {
-    "patternId": "ObjectNamesChecker",
-    "title": "Enforce object naming convention",
-    "description": "Enforces Scala object naming convention.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "regex",
-        "description": "The regex for name validation"
-      }
-    ]
-  },
-  {
-    "patternId": "PackageObjectNamesChecker",
-    "title": "Enforce package object naming convention",
-    "description": "Enforces Scala package object naming convention.",
-    "timeToFix": 10,
-    "parameters": [
-      {
-        "name": "regex",
-        "description": "The regex for name validation"
-      }
-    ]
-  },
-  {
-    "patternId": "EqualsHashCodeChecker",
-    "title": "Enforce equals hashCode contract",
-    "description": "Enforces that a class implements both equals and hashCode, if one of them is implemented.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ParameterNumberChecker",
-    "title": "Enforce max number of parameters",
-    "description": "Enforces a maximum number of parameters for each method.",
-    "timeToFix": 180,
-    "parameters": [
-      {
-        "name": "maxParameters",
-        "description": "Indicate the threshold of parameters that a method can receive"
-      }
-    ]
-  },
-  {
-    "patternId": "MagicNumberChecker",
-    "title": "Prohibit magic numbers",
-    "description": "Prohibits unnamed numerical constants.",
-    "timeToFix": 10
-  },
-  {
-    "patternId": "NoWhitespaceBeforeLeftBracketChecker",
-    "title": "Prohibit whitespace before left bracket",
-    "description": "Prohibits whitespace before left brackets.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "NoWhitespaceAfterLeftBracketChecker",
-    "title": "Prohibit whitespace after left bracket",
-    "description": "Prohibits whitespace after left brackets.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ReturnChecker",
-    "title": "Prohibit return statement",
-    "description": "Prohibits usage of the return statement.",
-    "timeToFix": 20
-  },
-  {
-    "patternId": "NullChecker",
-    "title": "Prohibit null literal",
-    "description": "Prohibits usage of the null literal.",
-    "timeToFix": 60
-  },
-  {
-    "patternId": "NoCloneChecker",
-    "title": "Prohibit overriding clone() method",
-    "description": "Prohibits classes and objects from defining the clone() method.",
-    "timeToFix": 120
-  },
-  {
-    "patternId": "NoFinalizeChecker",
-    "title": "Prohibit overriding finalize() method",
-    "description": "Prohibits classes and objects from defining the finalize() method.",
-    "timeToFix": 120
-  },
-  {
-    "patternId": "CovariantEqualsChecker",
-    "title": "Prohibit standalone covariant equals",
-    "description": "Prohibits classes and objects from defining equals method without overriding equals(java.lang.Object).",
-    "timeToFix": 10
-  },
-  {
-    "patternId": "StructuralTypeChecker",
-    "title": "Prohibit structural types",
-    "description": "Prohibits structural types.",
-    "timeToFix": 20
-  },
-  {
-    "patternId": "CyclomaticComplexityChecker",
-    "title": "Enforce cyclomatic complexity",
-    "description": "Enforces code to have low cyclomatic complexity.",
-    "timeToFix": 480,
-    "parameters": [
-      {
-        "name": "maximum",
-        "description": "Specifies the complexity threshold"
-      }
-    ]
-  },
-  {
-    "patternId": "UppercaseLChecker",
-    "title": "Prohibit lowercase L in Long literals",
-    "description": "Prohibits trailing lowercase L in Long literals.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "SimplifyBooleanExpressionChecker",
-    "title": "Enforce simplification of boolean expressions",
-    "description": "Enforces simplification of boolean expressions that contain boolean literals.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "IfBraceChecker",
-    "title": "Enforce curly braces",
-    "description": "Enforces curly braces around if blocks.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "MethodLengthChecker",
-    "title": "Enforce max method length",
-    "description": "Enforces a maximum number of statements for each method.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "maxLength",
-        "description": "Indicate the threshold of statements that a method should have"
-      }
-    ]
-  },
-  {
-    "patternId": "MethodNamesChecker",
-    "title": "Enforce method naming convention",
-    "description": "Enforces Scala method naming convention.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "regex",
-        "description": "The regex for name validation"
-      }
-    ]
-  },
-  {
-    "patternId": "NumberOfMethodsInTypeChecker",
-    "title": "Enforce max number of methods",
-    "description": "Enforces a maximum number of methods per type.",
-    "timeToFix": 180,
-    "parameters": [
-      {
-        "name": "maxMethods",
-        "description": "Indicate the threshold of methods that a type should have"
-      }
-    ]
-  },
-  {
-    "patternId": "PublicMethodsHaveTypeChecker",
-    "title": "Enforce return type of public methods",
-    "description": "Enforces declaration of explicit return type for public methods.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "ignoreOverride",
-        "description": "Ignore overridden methods"
-      }
-    ]
-  },
-  {
-    "patternId": "WhileChecker",
-    "title": "Prohibit while loops",
-    "description": "Prohibits usage of while loops.",
-    "timeToFix": 15
-  },
-  {
-    "patternId": "VarFieldChecker",
-    "title": "Prohibit mutable fields",
-    "description": "Prohibits mutable fields in classes and objects.",
-    "timeToFix": 60
-  },
-  {
-    "patternId": "VarLocalChecker",
-    "title": "Prohibit mutable variables",
-    "description": "Prohibits mutable local variables.",
-    "timeToFix": 60
-  },
-  {
-    "patternId": "RedundantIfChecker",
-    "title": "Prohibit redundant if statements",
-    "description": "Prohibits redundant expressions that are easily replaced by a variant of the condition.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "DeprecatedJavaChecker",
-    "title": "Prohibit Java's @Deprecated",
-    "description": "Prohibits usage of Java @Deprecated.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "EmptyClassChecker",
-    "title": "Prohibit empty class with braces",
-    "description": "Prohibits empty class from having unnecessary braces.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ClassTypeParameterChecker",
-    "title": "Enforce single letter class parameter",
-    "description": "Enforces class type parameter to be a single uppercase letter.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "UnderscoreImportChecker",
-    "title": "Prohibit wildcard imports",
-    "description": "Prohibits wildcard (underscore) imports.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "MultipleStringLiteralsChecker",
-    "title": "Prohibit duplicates string literals",
-    "description": "Prohibits usage of duplicated string literals.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ImportGroupingChecker",
-    "title": "Prohibit scattered imports",
-    "description": "Prohibits imports scattered across a file.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "BlockImportChecker",
-    "title": "Prohibit block import",
-    "description": "Prohibits block imports.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ForBraceChecker",
-    "title": "Enforce curly braces in for loops",
-    "description": "Enforces usage of curly braces in for loops.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "ProcedureDeclarationChecker",
-    "title": "Prohibit procedure style declarations",
-    "description": "Prohibits methods declarations in procedure style.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "NotImplementedErrorUsage",
-    "title": "Prohibit ??? operator",
-    "description": "Prohibits the not implemented operator.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "NonASCIICharacterChecker",
-    "title": "Prohibit Non ASCII Characters",
-    "description": "Prohibit the use of Non-ASCII Characters since some editors are unfriendly to non ascii characters.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "XmlLiteralChecker",
-    "title": "Prohibit XML literals",
-    "description": "Prohibit the use of XML literals",
-    "timeToFix": 5
-  }
-]
+[ {
+  "patternId" : "FileTabChecker",
+  "title" : "File Tab",
+  "parameters" : [ ]
+}, {
+  "patternId" : "FileLengthChecker",
+  "title" : "File Length",
+  "parameters" : [ {
+    "name" : "maxFileLength",
+    "description" : "maxFileLength"
+  } ]
+}, {
+  "patternId" : "HeaderMatchesChecker",
+  "title" : "Header Matches",
+  "parameters" : [ {
+    "name" : "header",
+    "description" : "header"
+  }, {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "SpacesAfterPlusChecker",
+  "title" : "Spaces After Plus",
+  "parameters" : [ ]
+}, {
+  "patternId" : "WhitespaceEndOfLineChecker",
+  "title" : "Whitespace End Of Line",
+  "parameters" : [ {
+    "name" : "ignoreWhitespaceLines",
+    "description" : "ignoreWhitespaceLines"
+  } ]
+}, {
+  "patternId" : "SpacesBeforePlusChecker",
+  "title" : "Spaces Before Plus",
+  "parameters" : [ ]
+}, {
+  "patternId" : "FileLineLengthChecker",
+  "title" : "File Line Length",
+  "parameters" : [ {
+    "name" : "maxLineLength",
+    "description" : "maxLineLength"
+  }, {
+    "name" : "tabSize",
+    "description" : "tabSize"
+  }, {
+    "name" : "ignoreImports",
+    "description" : "ignoreImports"
+  } ]
+}, {
+  "patternId" : "ClassNamesChecker",
+  "title" : "Class Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "ObjectNamesChecker",
+  "title" : "Object Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "PackageNamesChecker",
+  "title" : "Package Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "PackageObjectNamesChecker",
+  "title" : "Package Object Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "EqualsHashCodeChecker",
+  "title" : "Equals Hash Code",
+  "parameters" : [ ]
+}, {
+  "patternId" : "IllegalImportsChecker",
+  "title" : "Illegal Imports",
+  "parameters" : [ {
+    "name" : "illegalImports",
+    "description" : "illegalImports"
+  } ]
+}, {
+  "patternId" : "ParameterNumberChecker",
+  "title" : "Parameter Number",
+  "parameters" : [ {
+    "name" : "maxParameters",
+    "description" : "maxParameters"
+  } ]
+}, {
+  "patternId" : "MagicNumberChecker",
+  "title" : "Magic Number",
+  "parameters" : [ {
+    "name" : "ignore",
+    "description" : "ignore"
+  } ]
+}, {
+  "patternId" : "NoWhitespaceBeforeLeftBracketChecker",
+  "title" : "No Whitespace Before Left Bracket",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NoWhitespaceAfterLeftBracketChecker",
+  "title" : "No Whitespace After Left Bracket",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NoWhitespaceBeforeRightBracketChecker",
+  "title" : "No Whitespace Before Right Bracket",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ReturnChecker",
+  "title" : "Return",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NullChecker",
+  "title" : "Null",
+  "parameters" : [ {
+    "name" : "allowNullChecks",
+    "description" : "allowNullChecks"
+  } ]
+}, {
+  "patternId" : "NoCloneChecker",
+  "title" : "No Clone",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NoFinalizeChecker",
+  "title" : "No Finalize",
+  "parameters" : [ ]
+}, {
+  "patternId" : "CovariantEqualsChecker",
+  "title" : "Covariant Equals",
+  "parameters" : [ ]
+}, {
+  "patternId" : "StructuralTypeChecker",
+  "title" : "Structural Type",
+  "parameters" : [ ]
+}, {
+  "patternId" : "RegexChecker",
+  "title" : "Regex",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  }, {
+    "name" : "line",
+    "description" : "line"
+  } ]
+}, {
+  "patternId" : "NumberOfTypesChecker",
+  "title" : "Number Of Types",
+  "parameters" : [ {
+    "name" : "maxTypes",
+    "description" : "maxTypes"
+  } ]
+}, {
+  "patternId" : "CyclomaticComplexityChecker",
+  "title" : "Cyclomatic Complexity",
+  "parameters" : [ {
+    "name" : "maximum",
+    "description" : "maximum"
+  }, {
+    "name" : "countCases",
+    "description" : "countCases"
+  } ]
+}, {
+  "patternId" : "UppercaseLChecker",
+  "title" : "Uppercase L",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SimplifyBooleanExpressionChecker",
+  "title" : "Simplify Boolean Expression",
+  "parameters" : [ ]
+}, {
+  "patternId" : "IfBraceChecker",
+  "title" : "If Brace",
+  "parameters" : [ {
+    "name" : "singleLineAllowed",
+    "description" : "singleLineAllowed"
+  }, {
+    "name" : "doubleLineAllowed",
+    "description" : "doubleLineAllowed"
+  } ]
+}, {
+  "patternId" : "MethodLengthChecker",
+  "title" : "Method Length",
+  "parameters" : [ {
+    "name" : "maxLength",
+    "description" : "maxLength"
+  }, {
+    "name" : "ignoreComments",
+    "description" : "ignoreComments"
+  }, {
+    "name" : "ignoreEmpty",
+    "description" : "ignoreEmpty"
+  } ]
+}, {
+  "patternId" : "MethodNamesChecker",
+  "title" : "Method Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  }, {
+    "name" : "ignoreRegex",
+    "description" : "ignoreRegex"
+  }, {
+    "name" : "ignoreOverride",
+    "description" : "ignoreOverride"
+  } ]
+}, {
+  "patternId" : "MethodArgumentNamesChecker",
+  "title" : "Method Argument Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  }, {
+    "name" : "ignoreRegex",
+    "description" : "ignoreRegex"
+  } ]
+}, {
+  "patternId" : "NumberOfMethodsInTypeChecker",
+  "title" : "Number Of Methods In Type",
+  "parameters" : [ {
+    "name" : "maxMethods",
+    "description" : "maxMethods"
+  } ]
+}, {
+  "patternId" : "PublicMethodsHaveTypeChecker",
+  "title" : "Public Methods Have Type",
+  "parameters" : [ {
+    "name" : "ignoreOverride",
+    "description" : "ignoreOverride"
+  } ]
+}, {
+  "patternId" : "NewLineAtEofChecker",
+  "title" : "New Line At Eof",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NoNewLineAtEofChecker",
+  "title" : "No New Line At Eof",
+  "parameters" : [ ]
+}, {
+  "patternId" : "WhileChecker",
+  "title" : "While",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ThrowChecker",
+  "title" : "Throw",
+  "parameters" : [ ]
+}, {
+  "patternId" : "VarFieldChecker",
+  "title" : "Var Field",
+  "parameters" : [ ]
+}, {
+  "patternId" : "VarLocalChecker",
+  "title" : "Var Local",
+  "parameters" : [ ]
+}, {
+  "patternId" : "RedundantIfChecker",
+  "title" : "Redundant If",
+  "parameters" : [ ]
+}, {
+  "patternId" : "TokenChecker",
+  "title" : "Token",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "DeprecatedJavaChecker",
+  "title" : "Deprecated Java",
+  "parameters" : [ ]
+}, {
+  "patternId" : "OverrideJavaChecker",
+  "title" : "Override Java",
+  "parameters" : [ ]
+}, {
+  "patternId" : "EmptyClassChecker",
+  "title" : "Empty Class",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ClassTypeParameterChecker",
+  "title" : "Class Type Parameter",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  } ]
+}, {
+  "patternId" : "UnderscoreImportChecker",
+  "title" : "Underscore Import",
+  "parameters" : [ ]
+}, {
+  "patternId" : "LowercasePatternMatchChecker",
+  "title" : "Lowercase Pattern Match",
+  "parameters" : [ ]
+}, {
+  "patternId" : "MultipleStringLiteralsChecker",
+  "title" : "Multiple String Literals",
+  "parameters" : [ {
+    "name" : "allowed",
+    "description" : "allowed"
+  }, {
+    "name" : "ignoreRegex",
+    "description" : "ignoreRegex"
+  } ]
+}, {
+  "patternId" : "ImportGroupingChecker",
+  "title" : "Import Grouping",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NotImplementedErrorUsage",
+  "title" : "Not Implemented Error Usage",
+  "parameters" : [ ]
+}, {
+  "patternId" : "BlockImportChecker",
+  "title" : "Block Import",
+  "parameters" : [ ]
+}, {
+  "patternId" : "CurliesImportChecker",
+  "title" : "Curlies Import",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ProcedureDeclarationChecker",
+  "title" : "Procedure Declaration",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ForBraceChecker",
+  "title" : "For Brace",
+  "parameters" : [ {
+    "name" : "singleLineAllowed",
+    "description" : "singleLineAllowed"
+  } ]
+}, {
+  "patternId" : "ForLoopChecker",
+  "title" : "For Loop",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SpaceAfterCommentStartChecker",
+  "title" : "Space After Comment Start",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ScalaDocChecker",
+  "title" : "Scala Doc",
+  "parameters" : [ {
+    "name" : "ignoreRegex",
+    "description" : "ignoreRegex"
+  }, {
+    "name" : "ignoreTokenTypes",
+    "description" : "ignoreTokenTypes"
+  }, {
+    "name" : "ignoreOverride",
+    "description" : "ignoreOverride"
+  }, {
+    "name" : "indentStyle",
+    "description" : "indentStyle"
+  } ]
+}, {
+  "patternId" : "DisallowSpaceAfterTokenChecker",
+  "title" : "Disallow Space After Token",
+  "parameters" : [ ]
+}, {
+  "patternId" : "DisallowSpaceBeforeTokenChecker",
+  "title" : "Disallow Space Before Token",
+  "parameters" : [ ]
+}, {
+  "patternId" : "EnsureSingleSpaceAfterTokenChecker",
+  "title" : "Ensure Single Space After Token",
+  "parameters" : [ ]
+}, {
+  "patternId" : "EnsureSingleSpaceBeforeTokenChecker",
+  "title" : "Ensure Single Space Before Token",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NonASCIICharacterChecker",
+  "title" : "Non ASCIICharacter",
+  "parameters" : [ {
+    "name" : "allowStringLiterals",
+    "description" : "allowStringLiterals"
+  } ]
+}, {
+  "patternId" : "IndentationChecker",
+  "title" : "Indentation",
+  "parameters" : [ {
+    "name" : "tabSize",
+    "description" : "tabSize"
+  }, {
+    "name" : "methodParamIndentSize",
+    "description" : "methodParamIndentSize"
+  }, {
+    "name" : "classParamIndentSize",
+    "description" : "classParamIndentSize"
+  } ]
+}, {
+  "patternId" : "FieldNamesChecker",
+  "title" : "Field Names",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : "regex"
+  }, {
+    "name" : "objectFieldRegex",
+    "description" : "objectFieldRegex"
+  } ]
+}, {
+  "patternId" : "XmlLiteralChecker",
+  "title" : "Xml Literal",
+  "parameters" : [ ]
+}, {
+  "patternId" : "ImportOrderChecker",
+  "title" : "Import Order",
+  "parameters" : [ ]
+}, {
+  "patternId" : "PatternMatchAlignChecker",
+  "title" : "Pattern Match Align",
+  "parameters" : [ ]
+}, {
+  "patternId" : "TodoCommentChecker",
+  "title" : "Todo Comment",
+  "parameters" : [ {
+    "name" : "words",
+    "description" : "words"
+  } ]
+}, {
+  "patternId" : "EmptyInterpolatedStringChecker",
+  "title" : "Empty Interpolated String",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NamedArgumentChecker",
+  "title" : "Named Argument",
+  "parameters" : [ {
+    "name" : "checkString",
+    "description" : "checkString"
+  }, {
+    "name" : "ignoreMethod",
+    "description" : "ignoreMethod"
+  } ]
+}, {
+  "patternId" : "WhileBraceChecker",
+  "title" : "While Brace",
+  "parameters" : [ ]
+}, {
+  "patternId" : "CaseBraceChecker",
+  "title" : "Case Brace",
+  "parameters" : [ ]
+} ]

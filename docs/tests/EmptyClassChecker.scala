@@ -1,11 +1,11 @@
 //#Patterns: EmptyClassChecker
 
-//#Info: EmptyClassChecker
+//#Warning: EmptyClassChecker
 class EmptyClassChecker {
 
 }
 
-//#Info: EmptyClassChecker
+//#Warning: EmptyClassChecker
 object EmptyClassChecker {
 
 }

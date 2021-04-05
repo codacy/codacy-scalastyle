@@ -2,7 +2,7 @@
 
 class SimplifyBooleanExpressionChecker {
 
-  //#Info: SimplifyBooleanExpressionChecker
+  //#Warning: SimplifyBooleanExpressionChecker
   def expr(i: Int) = i > 0 || true
 
 }

@@ -1,0 +1,3 @@
+# Curlies Import
+
+Curlies imports, e.g. `import a.{b, c}`, can lead to annoying merge errors in large code bases that are maintained by lot of developers. This rule allows to ensure that only single imports, no renaming and no hiding imports are used in order to minimize merge errors in import declarations.

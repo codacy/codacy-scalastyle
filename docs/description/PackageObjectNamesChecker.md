@@ -1,4 +1,3 @@
-Scala packages should follow the Java package naming conventions.
+# Package Object Names
 
-[Source](http://docs.scala-lang.org/style/naming-conventions.html)
-      
+The Scala style guide recommends that package object names conform to certain standards.

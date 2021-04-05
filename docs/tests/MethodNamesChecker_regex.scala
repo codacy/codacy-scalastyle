@@ -2,12 +2,12 @@
 
 class MethodNamesChecker {
 
-  //#Info: MethodNamesChecker
+  //#Warning: MethodNamesChecker
   def addOne(i: Int) = i + 1
 
   def AddOne(i: Int) = i + 1
 
-  //#Info: MethodNamesChecker
+  //#Warning: MethodNamesChecker
   def * = "stars are beautiful"
 
 }

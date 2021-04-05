@@ -13,7 +13,8 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
-            sbt "scalafmt::test;
+            sbt "doc-generator/run;
+                 scalafmt::test;
                  test:scalafmt::test;
                  sbt:scalafmt::test;
                  stage"

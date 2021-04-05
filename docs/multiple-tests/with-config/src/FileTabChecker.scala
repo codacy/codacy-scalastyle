@@ -1,6 +1,6 @@
 //#Patterns: FileTabChecker
 
 class FileTabChecker {
-//#Info: FileTabChecker
+//#Warning: FileTabChecker
 	
 }

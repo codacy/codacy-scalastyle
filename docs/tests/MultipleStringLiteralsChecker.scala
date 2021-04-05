@@ -2,7 +2,7 @@
 
 class MultipleStringLiteralsChecker {
 
-  //#Info: MultipleStringLiteralsChecker
+  //#Warning: MultipleStringLiteralsChecker
   var a = "foobar"
   var b = "foobar"
   var c = "foobar"
@@ -11,7 +11,7 @@ class MultipleStringLiteralsChecker {
   def e = "foobar"
 
   def f(f: String = "foobar") = 5
-  //#Info: MultipleStringLiteralsChecker
+  //#Warning: MultipleStringLiteralsChecker
   var a1 = "bar"
   val d1 = "bar"
 
@@ -19,7 +19,7 @@ class MultipleStringLiteralsChecker {
 
   def f1(f: String = "bar") = "foobar"
 
-  //#Info: MultipleStringLiteralsChecker
+  //#Warning: MultipleStringLiteralsChecker
   val a2 = "1"
   val b2 = "1"
 

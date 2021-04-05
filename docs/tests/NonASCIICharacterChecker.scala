@@ -6,7 +6,7 @@ class NonASCIICharacterChecker{
   }
 
   "value" match {
-    //#Info: NonASCIICharacterChecker
+    //#Warning: NonASCIICharacterChecker
     case "value" ⇒ println("matched")
   }
 

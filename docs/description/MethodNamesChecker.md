@@ -1,6 +1,3 @@
-Textual (alphabetic) names for methods should be in the camelCase style with the first letter lower-case:
+# Method Names
 
-    def myFairMethod = ???
-
-[Source](http://docs.scala-lang.org/style/naming-conventions.html)
-      
+The Scala style guide recommends that method names conform to certain standards. If the methods are overriding another method, and the overridden method cannot be changed, then use the `ignoreOverride` parameter.

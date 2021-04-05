@@ -2,7 +2,7 @@
 
 class NoWhitespaceAfterLeftBracketChecker {
 
-  //#Info: NoWhitespaceAfterLeftBracketChecker
+  //#Warning: NoWhitespaceAfterLeftBracketChecker
   def result(i: Int): Option[ Int] = {
     Some(i)
   }
