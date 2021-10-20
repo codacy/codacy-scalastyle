@@ -12,7 +12,8 @@ See the [codacy-engine-scala-seed](https://github.com/codacy/codacy-engine-scala
 You can create the docker by doing:
 
 ```
-sbt docker:publishLocal
+sbt stage
+docker build -t codacy-scalastyle .
 ```
 
 The docker is ran with the following command:
