@@ -22,6 +22,14 @@ The docker is ran with the following command:
 docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
+## Generate the docs
+
+You can generate the docs by running:
+
+```
+sbt doc-generator/run
+```
+
 ## Test
 
 We use the [codacy-plugins-test](https://github.com/codacy/codacy-plugins-test) to test our external tools integration.
