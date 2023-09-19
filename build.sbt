@@ -4,10 +4,10 @@ name := "codacy-scalastyle"
 
 ThisBuild / scalaVersion := "2.13.5"
 
-val scalastyleVersion = "1.5.0"
+val scalastyleVersion = "1.5.1"
 
 val commonDeps = Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.3.0",
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "com.beautiful-scala" %% "scalastyle" % scalastyleVersion,
   "com.codacy" %% "codacy-engine-scala-seed" % "5.0.3"
 )
