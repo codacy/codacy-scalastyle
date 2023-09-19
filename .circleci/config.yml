@@ -13,7 +13,7 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
-            sbt "doc-generator/run;
+            sbt "set scalafmtUseIvy in ThisBuild := false;
                  scalafmt::test;
                  test:scalafmt::test;
                  sbt:scalafmt::test;
